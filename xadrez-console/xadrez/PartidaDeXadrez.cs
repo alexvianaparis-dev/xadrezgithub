@@ -1,4 +1,5 @@
-﻿using tabuleiro;
+﻿using System.Collections.Generic;
+using tabuleiro;
 
 namespace xadrez {
     internal class PartidaDeXadrez {

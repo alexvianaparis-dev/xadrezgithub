@@ -1,12 +1,4 @@
-﻿
-
-
-
-
-
-using System.Threading.Channels;
-
-namespace tabuleiro {
+﻿namespace tabuleiro {
     internal class Posicao {
 
         public int linha { get; set; }
@@ -17,11 +9,15 @@ namespace tabuleiro {
             this.coluna = coluna;
         }
 
+        public void definirValores(int linha, int coluna) {
+            this.linha = linha;
+            this.coluna = coluna;
+        }
+        
         public override string ToString() {
-            return linha 
-                + ", " 
+            return linha
+                + ", "
                 + coluna;
         }
-
     }
 }
