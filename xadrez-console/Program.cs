@@ -1,8 +1,9 @@
-﻿using tabuleiro;
+﻿using System;
+using tabuleiro;
 using xadrez;
 
 namespace xadrez_console {
-    internal class Program {
+    class Program {
         static void Main(string[] args) {
 
             try {
@@ -17,23 +18,23 @@ namespace xadrez_console {
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
 
-                    bool[,] posicoespossiveis = partida.tab.peca(origem).movimentosPossiveis();
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
                     Console.Clear();
-                    Tela.imprimirTabuleiro(partida.tab, posicoespossiveis);
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
                     partida.executaMovimento(origem, destino);
                 }
 
-
-                Tela.imprimirTabuleiro(partida.tab);
             }
             catch (TabuleiroException e) {
                 Console.WriteLine(e.Message);
             }
+
             Console.ReadLine();
         }
     }
