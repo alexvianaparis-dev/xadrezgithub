@@ -1,4 +1,5 @@
 ﻿
+
 namespace tabuleiro {
     abstract class Peca {
 
@@ -20,6 +21,7 @@ namespace tabuleiro {
         public void decrementarQteMovimentos() {
             qteMovimentos++;
         }
+
         public bool existeMovimentosPossiveis() {
             bool[,] mat = movimentosPossiveis();
             for (int i = 0; i < tab.colunas; i++) {
@@ -31,10 +33,10 @@ namespace tabuleiro {
             }
             return false;
         }
-        public bool podeMoverPara(Posicao pos) {
+
+        public bool movimentoPossivel(Posicao pos) {
             return movimentosPossiveis()[pos.linha, pos.coluna];
         }
-
         public abstract bool[,] movimentosPossiveis();
     }
 }
